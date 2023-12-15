@@ -38,6 +38,10 @@ body{
     height: calc(100% - 60px)
 }
 
+.right-main{
+    height: calc(100% - 60px);
+}
+
 .right-header{
     height: 60px;
     width: 100%;
@@ -45,14 +49,12 @@ body{
 
 .right-main{
     overflow-y: auto;
-    
 }
 
 .right-bottom{
     position: absolute;
     bottom: 0;
     width: 100%;
-
 }
 
 .bell-container{
@@ -95,4 +97,23 @@ i{
     left: 50%;
     transform: translate(-50%, -50% );
     color: rgb(150, 221, 244);
+}
+
+.time{
+    position: absolute;
+    bottom: 0;
+    right: 2px;
+    font-size: 10px;
+}
+
+.active{
+    background-color: rgba(4, 129, 167, 0.67);
+}
+
+.sent > div{
+    background-color: rgb(120, 194, 10);
+}
+
+.received > div{
+    background-color: white;
 }

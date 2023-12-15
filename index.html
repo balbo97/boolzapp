@@ -14,7 +14,7 @@
 
             <!-- CONTENITORE DI SINISTRA  -->
             <div class="container-left">
-                <!-- HEADER  -->
+                <!-- HEADER LEFT  -->
                 <div class="left-header d-flex justify-content-between bg-body-secondary">
                     <div class="my-avatar d-flex align-items-center">
                         <img src="./img/avatar_io.jpg" alt="my-avatar" class="rounded-circle ms-2 mt-1">
@@ -27,7 +27,7 @@
                     </div>
                 </div>
 
-                <!-- MAIN  -->
+                <!-- MAIN LEFT -->
                 <div class="left-main contact-list overflow-scroll">
                     <div class="notification d-flex p-2">
                         <div class="bell-container rounded-circle">
@@ -46,7 +46,7 @@
                         </div>
                         <!-- LISTA CONTATTI  -->
                         <ol class="list-unstyled" v-for="(contact, index) in contacts" :key="index">
-                            <li class="d-flex justify-content-between p-2">
+                            <li class="d-flex justify-content-between p-2" @click="changeChat(index)" :class="contactActive === index ? 'active' : ''" role="button" tabindex="0">
                                 <div class="images-avatar d-flex">
                                     <img :src="contact.avatar" :alt="contact.name" class="rounded-circle">
                                     <div>
@@ -81,36 +81,20 @@
                     </div>
                 </div>
                 <!-- MAIN  -->
-                <div class="right-main">
+                <div class="right-main overflow-scroll">
                     <div class="messages-container">
 
                         <ul class="list-unstyled">
-                            <li class="pt-3 d-flex flex-row-reverse"> 
-                               <div class="single-message bg-success rounded"> 
-                                <span>Ciao Consuelo</span>
+                            <li class="pt-3 d-flex" v-for="(message, index) in contacts[contactActive].messages" :key="index" :class="message.status == 'sent' ? 'flex-row-reverse sent' : 'received'"> 
+                               <div class="single-message rounded position-relative"> 
+                                <span>{{message.message}}</span>
+                                <span class="time">12:00</span>
                                </div>
                             </li>
-                            <li class="pt-3"> 
-                                <div class="single-message bg-light rounded">
-                                    <span>Hey Consuela</span>
-                                </div>
-                            </li>
+                           
                             
                         </ul>
-                        <ul class="list-unstyled">
-                            <li class="pt-3 d-flex flex-row-reverse"> 
-                               <div class="single-message bg-success rounded"> 
-                                <span>Ciao Consuelo</span>
-                               </div>
-                            </li>
-                            <li class="pt-3"> 
-                                <div class="single-message bg-light rounded">
-                                    <span>Hey Consuela</span>
-                                </div>
-                            </li>
-                            
-                        </ul>
-                       
+                        
                     </div>
                 </div>
                 <!-- BOTTOM  -->
