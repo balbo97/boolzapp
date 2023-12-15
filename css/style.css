@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgb(2, 177, 145) 75px, rgba(143, 141, 141, 0.727) 75px);
+}
+
+/* CONTAINERS */
+.container-app{
+    width: 900px;
+    height: 100%;
+    margin: 30px auto;
+    background-color: white;
+}
+
+.container-left{
+    height: 100%;
+    width: 40%;
+}
+
+.container-right{
+    height: 100%;
+    width: 60%;
+    background-image: url('.././img/mine.jpg');
+}
+
+.left-header{
+    height: 60px;
+    width: 100%;
+}
+
+.right-header{
+    height: 60px;
+    width: 100%;
+}
+
+.notification{
+    background-color: rgb(150, 221, 244);
+}
+
+/* UTILITIES  */
+img{
+    height: 80%;
+}
+
+i{
+   margin-right: 15px; 
+}
+
+li > img{
+    height: 60px;
+}
