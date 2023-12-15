@@ -11,8 +11,8 @@ body{
 
 /* CONTAINERS */
 .container-app{
-    width: 900px;
-    height: 100%;
+    width: 1000px;
+    height: 100vh;
     margin: 30px auto;
     background-color: white;
 }
@@ -26,6 +26,7 @@ body{
     height: 100%;
     width: 60%;
     background-image: url('.././img/mine.jpg');
+    position: relative;
 }
 
 .left-header{
@@ -33,14 +34,47 @@ body{
     width: 100%;
 }
 
+.left-main{
+    height: calc(100% - 60px)
+}
+
 .right-header{
     height: 60px;
     width: 100%;
 }
 
+.right-main{
+    overflow-y: auto;
+    
+}
+
+.right-bottom{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+
+.bell-container{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    position: relative;
+}
+
+.messages-container{
+    width: 80%;
+    margin: 30px auto;
+}
 .notification{
     background-color: rgb(150, 221, 244);
 }
+
+.single-message{
+    width: 200px;
+    padding: 10px 15px;
+}
+
 
 /* UTILITIES  */
 img{
@@ -51,6 +85,14 @@ i{
    margin-right: 15px; 
 }
 
-li > img{
+.images-avatar > img{
     height: 60px;
+}
+
+.bell-container > i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50% );
+    color: rgb(150, 221, 244);
 }
