@@ -2,7 +2,8 @@ const {createApp} = Vue;
 createApp({
     data() {
         return {
-            contactActive: 0,          
+            contactActive: 0,  
+            new_message: '',        
             contacts: [
                 {
                   name: 'Michele',
@@ -171,6 +172,17 @@ createApp({
     methods: {
       changeChat(index){
         this.contactActive = index;
+      },
+      addMessage(){
+        
+        this.contacts.messages.push({
+          date: '',
+          message: this.new_message,
+          status: 'sent'
+        })
+
+        this.new_message = '';
+      }
+
     }
-    },
 }).mount('#app')
