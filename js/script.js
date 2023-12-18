@@ -3,7 +3,8 @@ createApp({
     data() {
         return {
             contactActive: 0,  
-            new_message: '',        
+            new_message: '', 
+            auto_message: null,       
             contacts: [
                 {
                   name: 'Michele',
@@ -173,16 +174,28 @@ createApp({
       changeChat(index){
         this.contactActive = index;
       },
+
       addMessage(){
         
-        this.contacts.messages.push({
+        this.contacts[this.contactActive].messages.push({
           date: '',
           message: this.new_message,
           status: 'sent'
         })
 
         this.new_message = '';
-      }
+        
+        // IMPOSTO IL TIMEOUT PER UN MESSAGIO IN AUTOMATICO 
+        setTimeout(()=>{
 
+          this.contacts[this.contactActive].messages.push({
+            date: '',
+            message: 'ok',
+            status: 'received'
+          })
+        },1000)
+      },
+
+      
     }
 }).mount('#app')
