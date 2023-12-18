@@ -45,13 +45,14 @@
                             <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="search" @keyup="searchContact">
                         </div>
                         <!-- LISTA CONTATTI  -->
-                        <ol class="list-unstyled" v-for="(contact, index) in contacts" :key="index">
-                            <li class="d-flex justify-content-between p-2" v-show="contact.visible" @click="changeChat(index)" :class="contactActive === index ? 'active' : ''" role="button" tabindex="0">
+                        <ol class="list-unstyled">
+                            <li class="justify-content-between p-2 w-100" class="list-unstyled" v-for="(contact, index) in contacts" :key="index" v-show="contact.visible" @click="changeChat(index)" :class="contactActive === index ? 'active' : ''" role="button" tabindex="0">
+                             
                                 <div class="images-avatar d-flex">
                                     <img :src="contact.avatar" :alt="contact.name" class="rounded-circle">
                                     <div>
                                         <h6>{{contact.name}}</h6>
-                                        <p>Ultimo messaggio</p>
+                                        <p></p>
                                     </div>
                                 </div>
                                 <p>12:00</p>

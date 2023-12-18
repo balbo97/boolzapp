@@ -117,3 +117,8 @@ i{
 .received > div{
     background-color: white;
 }
+
+ol > li{
+    display: flex;
+    width: 100%;
+}

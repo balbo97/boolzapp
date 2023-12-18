@@ -4,7 +4,8 @@ createApp({
         return {
             contactActive: 0,  
             new_message: '', 
-            auto_message: null,       
+            auto_message: null,    
+            search: '',   
             contacts: [
                 {
                   name: 'Michele',
@@ -197,6 +198,7 @@ createApp({
       },
 
       searchContact(){
+        console.log(this.search)
         this.contacts.forEach(element => {
           if(element.name.toLowerCase().includes(this.search.toLowerCase())){
             
@@ -204,8 +206,10 @@ createApp({
           }
           else{
             element.visible = false;
+            console.log(element.visible)
           }
         });
+        console.log(this.contacts)
       }
 
       
